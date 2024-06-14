@@ -10,7 +10,7 @@ document.getElementById('form-silo9').addEventListener('submit', function(event)
     const result1 = silo9(inputValue1);
 
     // Display the result in the first result paragraph
-    document.getElementById('result1').textContent = `Result of Silo9 calculation: ${result1}`;
+    document.getElementById('result1').textContent = `Silo Lbs: ${result1}`;
 });
 
 // Add an event listener to the second form to handle the submit event
@@ -25,7 +25,7 @@ document.getElementById('form-silo11').addEventListener('submit', function(event
     const result2 = silo11(inputValue2);
 
     // Display the result in the second result paragraph
-    document.getElementById('result2').textContent = `Result of Silo11 calculation: ${result2}`;
+    document.getElementById('result2').textContent = `Silo Lbs: ${result2}`;
 });
 
 // Function to perform the Silo9 calculation
