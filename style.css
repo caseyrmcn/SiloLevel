@@ -32,3 +32,9 @@ input {
 button {
     padding: 10px 20px;
 }
+
+/* Result paragraph styling */
+p {
+    font-weight: bold;
+    margin-top: 10px;
+}
