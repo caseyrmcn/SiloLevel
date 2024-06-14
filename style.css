@@ -34,7 +34,7 @@ button {
 }
 
 /* Result paragraph styling */
-p {
+.result {
     font-weight: bold;
     margin-top: 10px;
 }
