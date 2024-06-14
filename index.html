@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silo Level Calculator</title>
+    <title>Simple Web App</title>
     <!-- Link to the CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Enter Material hight in Inches</h1>
-        <!-- Form to take user input -->
+        <h1>Simple Calculator</h1>
+        <!-- Form to take user inputs -->
         <form id="calculator-form">
-            <label for="inputValue">Material height:</label>
-            <!-- Input field for the number -->
-            <input type="number" id="inputValue" required>
+            <label for="inputValue1">Enter first number:</label>
+            <!-- Input field for the first number -->
+            <input type="number" id="inputValue1" required>
+            <br>
+            <label for="inputValue2">Enter second number:</label>
+            <!-- Input field for the second number -->
+            <input type="number" id="inputValue2" required>
+            <br>
             <!-- Submit button -->
             <button type="submit">Calculate</button>
         </form>
-        <!-- Paragraph to display the result -->
-        <p id="result"></p>
+        <!-- Paragraphs to display the results -->
+        <p id="result1"></p>
+        <p id="result2"></p>
     </div>
     <!-- Link to the JavaScript file for functionality -->
     <script src="script.js"></script>
