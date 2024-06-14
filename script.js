@@ -3,18 +3,25 @@ document.getElementById('calculator-form').addEventListener('submit', function(e
     // Prevent the default form submission behavior
     event.preventDefault();
 
-    // Get the value from the input field
-    const inputValue = document.getElementById('inputValue').value;
+    // Get the values from the input fields
+    const inputValue1 = document.getElementById('inputValue1').value;
+    const inputValue2 = document.getElementById('inputValue2').value;
 
-    // Call the calculate function and store the result
-    const result = calculate(inputValue);
+    // Call the calculate functions and store the results
+    const result1 = calculateSquare(inputValue1);
+    const result2 = calculateDouble(inputValue2);
 
-    // Display the result in the paragraph element
-    document.getElementById('result').textContent = `Result: ${result}`;
+    // Display the results in the paragraph elements
+    document.getElementById('result1').textContent = `Result of squaring: ${result1}`;
+    document.getElementById('result2').textContent = `Result of doubling: ${result2}`;
 });
 
-// Function to perform the calculation
-function calculate(value) {
-    // Simple calculation example: return the square of the input value
+// Function to calculate the square of a number
+function calculateSquare(value) {
     return value * value;
+}
+
+// Function to calculate the double of a number
+function calculateDouble(value) {
+    return value * 2;
 }
