@@ -1,34 +1,31 @@
-/* Basic CSS reset and styling for the body */
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+// Add an event listener to the form to handle the submit event
+document.getElementById('calculator-form').addEventListener('submit', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
 
-/* Container styling */
-.container {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+    // Get the values from the input fields
+    const inputValue1 = parseFloat(document.getElementById('inputValue1').value);
+    const inputValue2 = parseFloat(document.getElementById('inputValue2').value);
 
-/* Form styling */
-form {
-    margin-bottom: 20px;
-}
+    // Get the selected calculations
+    const calculation1 = document.getElementById('calculation1').value;
+    const calculation2 = document.getElementById('calculation2').value;
 
-/* Input field styling */
-input {
-    padding: 10px;
-    margin: 10px 0;
-}
+    // Calculate the results based on the selected calculations
+    const result1 = performCalculation(inputValue1, calculation1);
+    const result2 = performCalculation(inputValue2, calculation2);
 
-/* Button styling */
-button {
-    padding: 10px 20px;
+    // Display the results in the paragraph elements
+    document.getElementById('result1').textContent = `Result for first number: ${result1}`;
+    document.getElementById('result2').textContent = `Result for second number: ${result2}`;
+});
+
+// Function to perform the selected calculation
+function performCalculation(value, calculation) {
+    if (calculation === 'square') {
+        return value * value;
+    } else if (calculation === 'double') {
+        return value * 2;
+    }
+    return value;
 }
