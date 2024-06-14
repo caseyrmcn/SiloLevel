@@ -10,35 +10,27 @@
 <body>
     <div class="container">
         <h1>Simple Calculator</h1>
-        <!-- Form to take user inputs -->
-        <form id="calculator-form">
-            <label for="inputValue1">Enter first number:</label>
+        
+        <!-- Form to take the first user input and calculate its square -->
+        <form id="form-square">
+            <label for="inputValue1">Enter a number to square:</label>
             <!-- Input field for the first number -->
             <input type="number" id="inputValue1" required>
-            <br>
-            <label for="calculation1">Select calculation for first number:</label>
-            <!-- Dropdown for first number calculation -->
-            <select id="calculation1">
-                <option value="square">Square</option>
-                <option value="double">Double</option>
-            </select>
-            <br>
-            <label for="inputValue2">Enter second number:</label>
+            <!-- Submit button for squaring the number -->
+            <button type="submit">Square</button>
+        </form>
+        <!-- Paragraph to display the result of the first calculation -->
+        <p id="result1"></p>
+        
+        <!-- Form to take the second user input and calculate its double -->
+        <form id="form-double">
+            <label for="inputValue2">Enter a number to double:</label>
             <!-- Input field for the second number -->
             <input type="number" id="inputValue2" required>
-            <br>
-            <label for="calculation2">Select calculation for second number:</label>
-            <!-- Dropdown for second number calculation -->
-            <select id="calculation2">
-                <option value="square">Square</option>
-                <option value="double">Double</option>
-            </select>
-            <br>
-            <!-- Submit button -->
-            <button type="submit">Calculate</button>
+            <!-- Submit button for doubling the number -->
+            <button type="submit">Double</button>
         </form>
-        <!-- Paragraphs to display the results -->
-        <p id="result1"></p>
+        <!-- Paragraph to display the result of the second calculation -->
         <p id="result2"></p>
     </div>
     <!-- Link to the JavaScript file for functionality -->
