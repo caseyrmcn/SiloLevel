@@ -1,12 +1,12 @@
 
 //const var for cone valume
-//const coneV = 307876;
+//const coneVol = 307876;
 
 //const var for height of cylinder
 //const cylHeight = 160;
 
 //const var for volmue calculation
-//const Cylvol = 3.14 * 140^2 * cylHeight;
+//const cylVol = 3.14 * 140^2 * cylHeight;
 
 
 // Add an event listener to the first form to handle the submit event
