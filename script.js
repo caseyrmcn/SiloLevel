@@ -8,6 +8,8 @@
 //const var for volmue calculation
 //const cylVol = 3.14 * 140^2 * cylHeight;
 
+//const var to
+
 
 // Add an event listener to the first form to handle the submit event
 document.getElementById('form-silo9').addEventListener('submit', function(event) {
@@ -41,7 +43,27 @@ document.getElementById('form-silo11').addEventListener('submit', function(event
 
 // Function to perform the Silo9 calculation
 function silo9(value) {
-    return value * 9;
+
+    // Take measurement and subtract from overall silo height in IN
+    const siloHeight = 160- value;
+
+    // Take material height and convert to cubed IN
+    const matVolumeIn = 15386 * siloHeight;
+
+    // Add cone volume to material volume
+    //const totalMaterialVol = matVolumeIn + 307876;
+
+    // Convert cubed IN to Cuber FT
+    const totalMaterialFt = matVolumeIn / 1728;
+
+
+    // Multiply material bulk density by Volume of material
+    const siloLb = totalMaterialFt * 42
+
+    const silo = siloLb + 7120
+
+    return silo ;
+
 }
 
 // Function to perform the Silo11 calculation
