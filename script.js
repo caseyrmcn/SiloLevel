@@ -1,15 +1,4 @@
 
-//const var for cone valume
-//const coneVol = 307876;
-
-//const var for height of cylinder
-//const cylHeight = 160;
-
-//const var for volmue calculation
-//const cylVol = 3.14 * 140^2 * cylHeight;
-
-//const var to
-
 
 // Add an event listener to the first form to handle the submit event
 document.getElementById('form-silo9').addEventListener('submit', function(event) {
