@@ -34,7 +34,9 @@ document.getElementById('form-silo11').addEventListener('submit', function(event
 function silo9(value) {
 
     // Take measurement and subtract from overall silo height in IN
-    const siloHeight = 156- value;
+    const siloHeightOne = value - 24;
+
+    const siloHeight = 160 - siloHeightOne ;
 
     // Take material height and convert to cubed IN
     const matVolumeIn = 15386 * siloHeight;
@@ -58,7 +60,9 @@ function silo9(value) {
 // Function to perform the Silo11 calculation
 function silo11(value) {
     // Take measurement and subtract from overall silo height in IN
-    const siloHeight = 156- value;
+    const siloHeightOne = value - 24;
+
+    const siloHeight = 160 - siloHeightOne ;
 
     // Take material height and convert to cubed IN
     const matVolumeIn = 15386 * siloHeight;
