@@ -34,7 +34,7 @@ document.getElementById('form-silo11').addEventListener('submit', function(event
 function silo9(value) {
 
     // Take measurement and subtract from overall silo height in IN
-    const siloHeight = 160- value;
+    const siloHeight = 156- value;
 
     // Take material height and convert to cubed IN
     const matVolumeIn = 15386 * siloHeight;
@@ -47,15 +47,33 @@ function silo9(value) {
 
 
     // Multiply material bulk density by Volume of material
-    const siloLb = totalMaterialFt * 42
+    const siloLb = totalMaterialFt * 40
 
-    const silo = siloLb + 7120
+    const siloNine = siloLb + 7522
 
-    return silo ;
+    return siloNine ;
 
 }
 
 // Function to perform the Silo11 calculation
 function silo11(value) {
-    return value * 11;
+    // Take measurement and subtract from overall silo height in IN
+    const siloHeight = 156- value;
+
+    // Take material height and convert to cubed IN
+    const matVolumeIn = 15386 * siloHeight;
+
+    // Add cone volume to material volume
+    //const totalMaterialVol = matVolumeIn + 307876;
+
+    // Convert cubed IN to Cuber FT
+    const totalMaterialFt = matVolumeIn / 1728;
+
+
+    // Multiply material bulk density by Volume of material
+    const siloLb = totalMaterialFt * 43
+
+    const siloEleven = siloLb + 8086
+
+    return siloEleven ;
 }
