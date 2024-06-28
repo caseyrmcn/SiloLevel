@@ -34,7 +34,7 @@ document.getElementById('form-silo11').addEventListener('submit', function(event
 function silo9(value) {
 
     // Take measurement and subtract from overall silo height in IN
-    const siloHeightOne = value - 24;
+    const siloHeightOne = value - 14;
 
     const siloHeight = 160 - siloHeightOne ;
 
@@ -60,7 +60,7 @@ function silo9(value) {
 // Function to perform the Silo11 calculation
 function silo11(value) {
     // Take measurement and subtract from overall silo height in IN
-    const siloHeightOne = value - 24;
+    const siloHeightOne = value - 14;
 
     const siloHeight = 160 - siloHeightOne ;
 
