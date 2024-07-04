@@ -1,41 +1,12 @@
+// Function to calculate for Silo 9 or 10
+function calculateSilo9(ft, inches) {
+    // Conversion to inches for calculation
+    const totalInches = ft * 12 + inches;
 
-
-// Add an event listener to the first form to handle the submit event
-document.getElementById('form-silo9').addEventListener('submit', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
-
-    // Get the value from the first input field
-    const inputValue1 = parseFloat(document.getElementById('inputValue1').value);
-
-    // Calculate using the silo9 function
-    const result1 = silo9(inputValue1);
-
-    // Display the result in the first result paragraph
-    document.getElementById('result1').textContent = `Silo Lbs: ${result1}`;
-});
-
-// Add an event listener to the second form to handle the submit event
-document.getElementById('form-silo11').addEventListener('submit', function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
-
-    // Get the value from the second input field
-    const inputValue2 = parseFloat(document.getElementById('inputValue2').value);
-
-    // Calculate using the silo11 function
-    const result2 = silo11(inputValue2);
-
-    // Display the result in the second result paragraph
-    document.getElementById('result2').textContent = `Silo Lbs: ${result2}`;
-});
-
-// Function to perform the Silo9 calculation
-function silo9(value) {
+    // Fix measurement with height offset
+    const siloHeightOne = totalInches - 14;
 
     // Take measurement and subtract from overall silo height in IN
-    const siloHeightOne = value - 14;
-
     const siloHeight = 160 - siloHeightOne ;
 
     // Take material height and convert to cubed IN
@@ -54,14 +25,18 @@ function silo9(value) {
     const siloNine = siloLb + 7522
 
     return siloNine ;
-
+    return result;
 }
 
-// Function to perform the Silo11 calculation
-function silo11(value) {
-    // Take measurement and subtract from overall silo height in IN
-    const siloHeightOne = value - 14;
+// Function to calculate for Silo 11 or 12
+function calculateSilo11(ft, inches) {
+    // Conversion to inches for calculation
+    const totalInches = ft * 12 + inches;
 
+    // Fix measurement with height offset
+    const siloHeightOne = totalInches - 14;
+
+    // Take measurement and subtract from overall silo height in IN
     const siloHeight = 160 - siloHeightOne ;
 
     // Take material height and convert to cubed IN
@@ -80,4 +55,23 @@ function silo11(value) {
     const siloEleven = siloLb + 8086
 
     return siloEleven ;
+    return result;
 }
+
+// Event listener for Silo 9 form submission
+document.getElementById('form-silo9').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const ft = parseInt(document.getElementById('inputFt1').value);
+    const inches = parseInt(document.getElementById('inputInches1').value);
+    const result = calculateSilo9(ft, inches);
+    document.getElementById('result1').innerText = `Result: ${result}`;
+});
+
+// Event listener for Silo 11 form submission
+document.getElementById('form-silo11').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const ft = parseInt(document.getElementById('inputFt2').value);
+    const inches = parseInt(document.getElementById('inputInches2').value);
+    const result = calculateSilo11(ft, inches);
+    document.getElementById('result2').innerText = `Result: ${result}`;
+});
