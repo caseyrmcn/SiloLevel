@@ -25,7 +25,6 @@ function calculateSilo9(ft, inches) {
     const siloNine = siloLb + 7522
 
     return siloNine ;
-    return result;
 }
 
 // Function to calculate for Silo 11 or 12
@@ -50,12 +49,19 @@ function calculateSilo11(ft, inches) {
 
 
     // Multiply material bulk density by Volume of material
-    const siloLb = totalMaterialFt * 43
+    const siloLb = totalMaterialFt * 42
 
-    const siloEleven = siloLb + 8086
+    const siloEleven = siloLb + 7580
 
-    return siloEleven ;
-    return result;
+    if (siloEleven > 49000) {
+	total = siloEleven - 3500;
+    } else if (siloEleven > 39000) {
+	total = siloEleven - 1700;
+    } else {
+	total = siloEleven;
+    }
+    
+    return total;
 }
 
 // Event listener for Silo 9 form submission
