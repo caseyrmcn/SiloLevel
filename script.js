@@ -1,81 +1,70 @@
 // Function to calculate for Silo 9 or 10
 function calculateSilo9(ft, inches) {
     // Conversion to inches for calculation
-    const totalInches = ft * 12 + inches;
+    totalInches = ft * 12 + inches;
 
     // Fix measurement with height offset
-    const siloHeightOne = totalInches - 14;
+    siloHeightOne = totalInches - 12
 
-    // Take measurement and subtract from overall silo height in IN
-    const siloHeight = 160 - siloHeightOne ;
-
-    // Take material height and convert to cubed IN
-    const matVolumeIn = 15386 * siloHeight;
-
-    // Add cone volume to material volume
-    //const totalMaterialVol = matVolumeIn + 307876;
-
-    // Convert cubed IN to Cuber FT
-    const totalMaterialFt = matVolumeIn / 1728;
-
-
-    // Multiply material bulk density by Volume of material
-    const siloLb = totalMaterialFt * 40
-
-    const siloNine = siloLb + 7051
-
-    return siloNine ;
+    //Depending on input decide between cone measurement formula and silo measurement
+    if (siloHeightOne > 159) {
+        //Cone measurement find height percentage and translate to radius
+        //With new cone dimensions run formula for volume of a cone 1/3 * PI * radiusSquared * height
+        //tranlate volume into LB = V / 1728 * Bulk density
+        coneHeight = 220 - siloHeightOne;
+        coneHeightPercent = coneHeight / 60
+        coneRadius = 70 * coneHeightPercent
+        coneRadiusSquared = coneRadius * coneRadius
+        coneRadiusTotal = 0.33 * 3.14 * coneRadiusSquared * coneHeight;
+        coneTotal = coneRadiusTotal / 1728 * 40
+        return coneTotal;
+    } else {
+        siloHeight = 160 - siloHeightOne;
+        matVolumeIn = 15386 * siloHeight;
+        totalMaterialFt = matVolumeIn / 1728;
+        siloLb = totalMaterialFt * 40.35
+        siloNine = siloLb + 7051
+        return siloNine
+    }
 }
 
 // Function to calculate for Silo 11 or 12
 function calculateSilo11(ft, inches) {
     // Conversion to inches for calculation
-    const totalInches = ft * 12 + inches;
+    totalInches = ft * 12 + inches;
 
     // Fix measurement with height offset
-    const siloHeightOne = totalInches - 14;
+    siloHeightOne = totalInches - 12
 
-    // Take material height and convert to cubed IN
+    //Depending on input decide between cone measurement formula and silo measurement
     if (siloHeightOne > 159) {
+        //Cone measurement find height percentage and translate to radius
+        //With new cone dimensions run formula for volume of a cone 1/3 * PI * radiusSquared * height
+        //tranlate volume into LB = V / 1728 * Bulk density
         coneHeight = 220 - siloHeightOne;
-	coneHeightPercent = coneHeight / 60 
-	coneRadius = 70 * coneHeightPercent
-	coneRadiusSquared = coneRadius * coneRadius
-	coneRadiusTotal = 0.33 * 3.14 * coneRadiusSquared * coneHeight;
-	coneTotal = coneRadiusTotal / 1728 * 43
-	return coneTotal;
-        } else {
-	    siloHeight = 160 - siloHeightOne ;
-    }
-
-
-    // Take measurement and subtract from overall silo height in IN
-    //const siloHeight = 160 - siloHeightOne ;
-
-    const matVolumeIn = 15386 * siloHeight;
-
-    // Convert cubed IN to Cuber FT
-    const totalMaterialFt = matVolumeIn / 1728;
-
-
-    // Multiply material bulk density by Volume of material
-    const siloLb = totalMaterialFt * 43
-
-    const siloEleven = siloLb + 7580
-
-    //NE silo adjustment 
-    if (siloEleven > 59000) {
-	total = siloEleven - 3000;
-    } else if (siloEleven > 49000) {
-	total = siloEleven - 2000;
-    }else if (siloEleven > 39000) {
-	total = siloEleven - 1000;
+        coneHeightPercent = coneHeight / 60
+        coneRadius = 70 * coneHeightPercent
+        coneRadiusSquared = coneRadius * coneRadius
+        coneRadiusTotal = 0.33 * 3.14 * coneRadiusSquared * coneHeight;
+        coneTotal = coneRadiusTotal / 1728 * 42.5
+        return coneTotal;
     } else {
-	total = siloEleven;
+	    siloHeight = 160 - siloHeightOne;
+        matVolumeIn = 15386 * siloHeight;
+        totalMaterialFt = matVolumeIn / 1728;
+        siloLb = totalMaterialFt * 43;
+        siloEleven = siloLb + 7580;
+        if (siloEleven > 59000) {
+            total = siloEleven;
+        } else if (siloEleven > 49000) {
+            total = siloEleven - 2000;
+        } else if (siloEleven > 39000) {
+            total = siloEleven - 1000;
+        }else {
+            total = siloEleven;
+        }
+        return total;
     }
-    
-    return total;
-   
 }
 
 // Event listener for Silo 9 form submission
