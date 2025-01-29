@@ -52,7 +52,7 @@ function calculateSilo11(ft, inches) {
 	    siloHeight = 160 - siloHeightOne;
         matVolumeIn = 15386 * siloHeight;
         totalMaterialFt = matVolumeIn / 1728;
-        siloLb = totalMaterialFt * 43;
+        siloLb = totalMaterialFt * 44;
         siloEleven = siloLb + 7580;
         if (siloEleven < 58000) {
             total = siloEleven;
