@@ -16,7 +16,7 @@ function calculateSilo9(ft, inches) {
         coneRadius = 70 * coneHeightPercent
         coneRadiusSquared = coneRadius * coneRadius
         coneRadiusTotal = 0.33 * 3.14 * coneRadiusSquared * coneHeight;
-        coneTotal = coneRadiusTotal / 1728 * 40
+        coneTotal = coneRadiusTotal / 1728 * 40.35
         return coneTotal;
     } else {
         siloHeight = 160 - siloHeightOne;
@@ -46,7 +46,7 @@ function calculateSilo11(ft, inches) {
         coneRadius = 70 * coneHeightPercent
         coneRadiusSquared = coneRadius * coneRadius
         coneRadiusTotal = 0.33 * 3.14 * coneRadiusSquared * coneHeight;
-        coneTotal = coneRadiusTotal / 1728 * 42.5
+        coneTotal = coneRadiusTotal / 1728 * 44
         return coneTotal;
     } else {
 	    siloHeight = 160 - siloHeightOne;
