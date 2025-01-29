@@ -58,8 +58,6 @@ function calculateSilo11(ft, inches) {
             total = siloEleven;
         } else if (siloEleven > 58000) {
             total = siloEleven - 3500;
-        } else if (siloEleven > 39000) {
-            total = siloEleven - 1000;
         }else {
             total = siloEleven;
         }
